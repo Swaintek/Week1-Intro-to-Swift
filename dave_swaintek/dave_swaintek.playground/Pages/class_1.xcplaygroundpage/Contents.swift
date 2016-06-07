@@ -44,6 +44,29 @@ func stringReverse (inputString: String) -> String {
 
 stringReverse("Dave")
 
+var input = "messi"
+
+func reverse(inout input: String)
+{
+    var startIndex = input.startIndex
+    var endIndex = input.endIndex.predecessor()
+    
+    for _ in 0...input.characters.count.predecessor() / 2 {
+        
+        let sCharacter = input.characters[startIndex]
+        let eCharacter = input.characters[endIndex]
+        
+        input.removeAtIndex(startIndex)
+        input.insert(eCharacter, atIndex: startIndex)
+        
+        input.removeAtIndex(endIndex)
+        input.insert(sCharacter, atIndex: endIndex)
+        
+        startIndex = startIndex.successor()
+        endIndex = endIndex.predecessor()
+    }
+}
+
 
 //Variable as a function that takes a parameter and returns a greeting
 
