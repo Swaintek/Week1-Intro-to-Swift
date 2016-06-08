@@ -12,10 +12,9 @@ func earthAdder (inout planets : [String]) {
         planets = planets + ["Earth"]
     }
 }
-
+earthAdder(&planets)
 
 //Reduce the string
-earthAdder(&planets)
 
 let planetString : String = planets.reduce("") { (result, planet) -> String in
     return result + planet + ", "
